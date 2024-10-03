@@ -12,6 +12,8 @@ public class SuperHeroe implements Serializable{
 	private String dni;
 	private String nombre;
 	private String identidad;
+
+
 	private String tipo;
 	private int peso;
 	private int altura;
@@ -37,13 +39,26 @@ public class SuperHeroe implements Serializable{
 	public String getIdentidad() {
 		return identidad;
 	}
+	public String getTipo() {
+		return tipo;
+	}
 	public int getPeso() {
 		return peso;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public int getId() {
+		return id;
+	}
+	public int getAltura() {
+		return altura;
+	}
 	@Override
 	public String toString() {
-		return "SuperHeroe [id=" + id + ", dni=" + dni + ", nombre=" + nombre + ", identidad=" + identidad + ", tipo="
-				+ tipo + ", peso=" + peso + ", altura=" + altura + "]";
+	    return String.format("SuperHeroe [id=%-1d, dni=%-9s, nombre=%-15s, identidad=%-20s, tipo=%-10s, peso=%-3d, altura=%-4d]",
+	            id, dni, nombre, identidad, tipo, peso, altura);
 	}
 	
 }

@@ -16,8 +16,9 @@ public class cuatroB {
 		guardarSuperHeroes();
 		dni = pedirDni(teclado, dni);
 		peso = pedirPeso(teclado, peso);
-		compararPersonaje(teclado, dni, personaje, peso);
-
+		compararPersonaje(dni, personaje, peso);
+		
+		teclado.close();
 	}
 	
 	public static void guardarSuperHeroes() {
@@ -61,6 +62,7 @@ public class cuatroB {
 			dni = teclado.next();
 			comparaFormato = formatoUsuario.matcher(dni);
 		} while (!comparaFormato.matches());
+		
 		return dni;
 	}
 	
@@ -70,7 +72,7 @@ public class cuatroB {
 		return peso;
 	}
 
-	public static void compararPersonaje(Scanner teclado, String dni, SuperHeroe personaje, int peso) {
+	public static void compararPersonaje(String dni, SuperHeroe personaje, int peso) {
 		try {
 			File archivo = new File("C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\ejercicios\\ObjetosSuperHeroes.dat");
 			ObjectInputStream dataIS = new ObjectInputStream(new FileInputStream(archivo));
