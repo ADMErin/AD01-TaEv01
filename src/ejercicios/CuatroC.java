@@ -19,17 +19,28 @@ public class CuatroC {
 		buscarPersonaje(personaje, tipo);
 		teclado.close();
 	}
-
+	/**
+	 * Método que pide por teclado el tipo de personaje
+	 * @param teclado
+	 * @param tipo
+	 * @return tipo
+	 */
 	public static String pedirTipo(Scanner teclado, String tipo) {
 		System.out.println("Introduzca un tipo de personaje: ");
 		tipo = teclado.next();
 		return tipo;
 	}
-
+	/**
+	 * Método que busca personajes por su tipo, los muestra por pantalla,
+	 * 	cuenta cuantos existen de un determinado tipo 
+	 *  e informa si no existe el tipo
+	 * @param personaje
+	 * @param tipo
+	 */
 	public static void buscarPersonaje(SuperHeroe personaje, String tipo) {
 		try {
 			File archivo = new File(
-					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\ejercicios\\ObjetosSuperHeroes.dat");
+					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\TaEv01\\src\\ejercicios\\ObjetosSuperHeroes.dat");
 			ObjectInputStream dataIS = new ObjectInputStream(new FileInputStream(archivo));
 
 			boolean encontrado = false;

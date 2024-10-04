@@ -8,7 +8,7 @@ public class CuatroA {
 
 		try {
 			File archivo = new File(
-					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\ejercicios\\superHeroes.dat");
+					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\TaEv01\\src\\ejercicios\\superHeroes.dat");
 			RandomAccessFile fichero = new RandomAccessFile(archivo, "rw");
 
 			int[] ids = { 1, 2, 3, 4, 5, 6, 7 };

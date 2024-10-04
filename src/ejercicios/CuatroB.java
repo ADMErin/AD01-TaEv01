@@ -21,11 +21,14 @@ public class CuatroB {
 
 		teclado.close();
 	}
-
+	/**
+	 * Método que crea un archivo .dat de objetos SuperHeroes
+	 *  a partir de los Arrays con la información
+	 */
 	public static void guardarSuperHeroes() {
 		try {
 			File archivo = new File(
-					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\ejercicios\\ObjetosSuperHeroes.dat");
+					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\TaEv01\\ObjetosSuperHeroes.dat");
 			FileOutputStream fichero = new FileOutputStream(archivo);
 
 			ObjectOutputStream dataObjetos = new ObjectOutputStream(fichero);
@@ -54,7 +57,12 @@ public class CuatroB {
 			System.out.print("Problemas de entrada/salida");
 		}
 	}
-
+	/**
+	 * Método que pide por teclado un DNI
+	 * @param teclado
+	 * @param dni
+	 * @return dni
+	 */
 	public static String pedirDni(Scanner teclado, String dni) {
 
 		Pattern formatoUsuario = Pattern.compile("[0-9]{8}[A-Z]");
@@ -69,17 +77,28 @@ public class CuatroB {
 
 		return dni;
 	}
-
+	/**
+	 * Método que pide por teclado el peso
+	 * @param teclado
+	 * @param peso
+	 * @return peso
+	 */
 	public static int pedirPeso(Scanner teclado, int peso) {
 		System.out.println("Introduzca su peso actual: ");
 		peso = teclado.nextInt();
 		return peso;
 	}
-
+	/**
+	 * Método que busca el personaje por su dni, si no existe informa de ello, 
+	 * 	si existe compara el peso introducido con el registrado y muestra el resultado
+	 * @param dni
+	 * @param personaje
+	 * @param peso
+	 */
 	public static void compararPersonaje(String dni, SuperHeroe personaje, int peso) {
 		try {
 			File archivo = new File(
-					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\ejercicios\\ObjetosSuperHeroes.dat");
+					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\TaEv01\\src\\ejercicios\\ObjetosSuperHeroes.dat");
 			ObjectInputStream dataIS = new ObjectInputStream(new FileInputStream(archivo));
 
 			boolean encontrado = false;
@@ -94,10 +113,9 @@ public class CuatroB {
 						break;
 					}
 				} catch (EOFException eof) {
-					break; // Fin del archivo
+					 
 				}
 			}
-
 			if (!encontrado) {
 				System.out.println("No existe ningún personaje con ese DNI");
 			}
@@ -109,7 +127,11 @@ public class CuatroB {
 			System.out.println("No se encuentra la clase SuperHeroe.");
 		}
 	}
-
+	/**
+	 * Método que compara el peso registrado con el introducido
+	 * @param personaje
+	 * @param peso
+	 */
 	public static void compararPeso(SuperHeroe personaje, int peso) {
 		String nombre = personaje.getNombre();
 		int pesoRegistrado = personaje.getPeso();

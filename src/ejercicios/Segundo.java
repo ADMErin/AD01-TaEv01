@@ -13,19 +13,24 @@ public class Segundo {
 	public static void main(String[] args) {
 		try {
 			File entrada = new File(
-					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\ejercicios\\Nombres.txt");
+					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\TaEv01\\src\\ejercicios\\Nombres.txt");
 			File salida = new File(
-					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\ejercicios\\salidaNombres.txt");
+					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\TaEv01\\src\\ejercicios\\salidaNombres.txt");
 
 			BufferedReader fichEntrada = new BufferedReader(new FileReader(entrada));
 			BufferedWriter fichSalida = new BufferedWriter(new FileWriter(salida));
-
+			
 			String linea;
 			while ((linea = fichEntrada.readLine()) != null) {
+				
+				//Recoge la linea del archivo por palabras en un array
 				String[] nombreCompleto = linea.split(" ");
+				
+				//Recoge el nombre del array
 				String nombre = nombreCompleto[0];
+				
+				//Comprueba la longitud del nombre
 				if (nombre.length() == 5) {
-					System.out.println(nombre);
 					fichSalida.write(nombre);
 					fichSalida.write("\n");
 				}
