@@ -11,7 +11,7 @@ public class Tercero {
 					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\TaEv01\\src\\ejercicios\\muestra.pdf");
 			FileInputStream fichEntrada = new FileInputStream(entrada);
 			
-			//Creamos un array e bytes donde guardar los 4 primeros del archivo
+			//Creamos un array de bytes donde guardar los 4 primeros del archivo
 			byte[] archivo = new byte[4];
 			fichEntrada.read(archivo);
 			byte[] pdf = { 37, 80, 68, 70 };

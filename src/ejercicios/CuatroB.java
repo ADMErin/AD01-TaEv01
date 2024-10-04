@@ -28,7 +28,7 @@ public class CuatroB {
 	public static void guardarSuperHeroes() {
 		try {
 			File archivo = new File(
-					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\ejercicio1\\src\\TaEv01\\ObjetosSuperHeroes.dat");
+					"C:\\Users\\memen\\Desktop\\2ºFP\\Acceso a Datos\\Tareas\\TaEv01\\src\\ejercicios\\ObjetosSuperHeroes.dat");
 			FileOutputStream fichero = new FileOutputStream(archivo);
 
 			ObjectOutputStream dataObjetos = new ObjectOutputStream(fichero);
@@ -52,7 +52,7 @@ public class CuatroB {
 				dataObjetos.writeObject(heroe);
 			}
 			dataObjetos.close();
-			System.out.println("La carga de objetos ha terminado correctamente");
+
 		} catch (IOException excepcion) {
 			System.out.print("Problemas de entrada/salida");
 		}
@@ -113,7 +113,7 @@ public class CuatroB {
 						break;
 					}
 				} catch (EOFException eof) {
-					 
+					 break;
 				}
 			}
 			if (!encontrado) {
